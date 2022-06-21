@@ -7,7 +7,7 @@
         stage("inPr") {
             steps {
                 echo "test in pr"
-                echo "second test in pr"
+                echo "third test in pr cause reasons"
             }
         }
         stage("beginTests") {
