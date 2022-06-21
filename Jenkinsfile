@@ -8,6 +8,7 @@
             steps {
                 echo "test in pr"
                 echo "third test in pr cause reasons"
+                echo "sera"
             }
         }
         stage("beginTests") {
