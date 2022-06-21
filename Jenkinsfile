@@ -11,7 +11,7 @@
                 }
             }
             steps {
-                echo "Test running"
+                echo "Test running from pull request"
             }
         }
     }
