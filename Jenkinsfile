@@ -4,6 +4,11 @@
 
     stages {
 
+        stage("inPr") {
+            steps {
+                echo "test in pr"
+            }
+        }
         stage("beginTests") {
             when {
                 expression {
