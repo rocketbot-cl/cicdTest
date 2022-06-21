@@ -4,7 +4,7 @@
 
     stages {
 
-        stage("inPr") {
+        stage("inPr2") {
             steps {
                 echo "test in pr"
                 echo "third test in pr cause reasons"
