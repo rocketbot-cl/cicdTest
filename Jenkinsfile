@@ -4,11 +4,11 @@
 
     stages {
 
-        stage("inPr2") {
+        stage("inPr3") {
             steps {
                 echo "test in pr"
                 echo "third test in pr cause reasons"
-                echo "sera"
+                echo "Testing names"
             }
         }
         stage("beginTests") {
