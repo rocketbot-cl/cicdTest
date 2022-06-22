@@ -9,6 +9,9 @@
                 echo "test in pr"
                 echo "third test in pr cause reasons"
                 echo "Testing names"
+                sh "pwd"
+                sh "ls"
+                echo "${env.BRANCH_NAME}"
             }
         }
         stage("beginTests") {
