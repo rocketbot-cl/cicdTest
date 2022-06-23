@@ -9,7 +9,6 @@
                 echo "test in pr"
                 echo "third test in pr cause reasons"
                 echo "Testing names"
-                sh "python3 test.py"
                 echo "${env.BRANCH_NAME}"
                 echo "--"
                 echo "Change ID"
