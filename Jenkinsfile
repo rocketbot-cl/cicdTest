@@ -17,7 +17,7 @@
                 echo "${CHANGE_URL}"
                 echo "Change Title"
                 script {
-                    def myVariable=${CHANGE_TITLE}
+                    def myVariable=env.CHANGE_TITLE
                     echo "${myVariable}"
                 }
             }
