@@ -17,8 +17,18 @@
                 echo "${CHANGE_URL}"
                 echo "Change Title"
                 script {
-                    def myVariable=env.CHANGE_TITLE
-                    echo "${myVariable}"
+                    def commitAccepted = ["[hidden]", "[fix]", "[new]"]
+                    def changeTitle = env.CHANGE_TITLE
+                    def isAccepted = False
+                    for (each in commitAccepted) {
+                        if(changeTitle.contains(each)){
+                            isAccepted = True
+                        }
+                    }
+                    echo "${isAccepted}"
+                    if (!isAccepted){
+                        error("Not a valid commit")
+                    }
                 }
             }
         }
