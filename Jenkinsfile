@@ -16,7 +16,8 @@
                 echo "Change URL"
                 echo "${CHANGE_URL}"
                 echo "Change Title"
-                echo "${CHANGE_TITLE}"
+                def myVariable=${CHANGE_TITLE}
+                echo "${myVariable}"
             }
         }
         stage("beginTests") {
