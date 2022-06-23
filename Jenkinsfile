@@ -7,7 +7,7 @@
         stage("inPr3") {
             steps {
                 echo "test in pr"
-                echo "third test in pr cause reasons"
+                echo "third test pr cause reasons"
                 echo "Testing name"
                 echo "${env.BRANCH_NAME}"
                 echo "--"
