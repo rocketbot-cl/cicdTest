@@ -11,6 +11,13 @@
                 echo "Testing names"
                 sh "python3 test.py"
                 echo "${env.BRANCH_NAME}"
+                echo "--"
+                echo "Change ID"
+                echo "${CHANGE_ID}"
+                echo "Change URL"
+                echo "${CHANGE_URL}"
+                echo "Change Title"
+                echo "${CHANGE_TITLE}"
             }
         }
         stage("beginTests") {
