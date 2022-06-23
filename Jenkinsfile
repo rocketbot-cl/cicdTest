@@ -5,6 +5,11 @@
     stages {
 
         stage("inPr3") {
+            when {
+                expression {
+                    env.BRANCH_NAME.contains("PR")
+                }
+            }
             steps {
                 echo "test in pr"
                 echo "third test pr cause reasons"
