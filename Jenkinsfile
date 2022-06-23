@@ -19,10 +19,10 @@
                 script {
                     def commitAccepted = ["[hidden]", "[fix]", "[new]"]
                     def changeTitle = env.CHANGE_TITLE
-                    def isAccepted = False
+                    def isAccepted = false
                     for (each in commitAccepted) {
                         if(changeTitle.contains(each)){
-                            isAccepted = True
+                            isAccepted = true
                         }
                     }
                     echo "${isAccepted}"
