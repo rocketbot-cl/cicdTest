@@ -8,7 +8,7 @@
             steps {
                 echo "test in pr"
                 echo "third test in pr cause reasons"
-                echo "Testing names"
+                echo "Testing name"
                 echo "${env.BRANCH_NAME}"
                 echo "--"
                 echo "Change ID"
