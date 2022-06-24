@@ -35,6 +35,8 @@
                         error("Not a valid commit")
                     }
                 }
+                sh "git clone https://github.com/DaniloToroL/module_documentator.git"
+                sh "pip install -r ./module_documentator/requirements.txt"
             }
         }
         stage("beginTests") {
