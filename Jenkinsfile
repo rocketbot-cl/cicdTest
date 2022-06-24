@@ -36,7 +36,7 @@
                     }
                 }
                 sh "git clone https://github.com/DaniloToroL/module_documentator.git"
-                sh "sudo apt install python3-pip"
+                sh "sudo apt install python3-pip -y"
                 sh "pip3 install -r ./module_documentator/requirements.txt"
             }
         }
