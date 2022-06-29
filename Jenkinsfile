@@ -53,7 +53,7 @@ pipeline {
                 sh "pwd"
                 sh "ls"
                 sh "pip3 install -r ./module_documentator/requirements.txt"
-                sh "python3 ./module_documentator/documentator -m ./"
+                sh "python3 ./module_documentator/documentator.py -m ./"
             }
         }
 
