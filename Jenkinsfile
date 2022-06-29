@@ -95,6 +95,7 @@ pipeline {
         failure {
             echo "Test failed"
             sh "rm -r ./*"
+            
         }
     }
 }
