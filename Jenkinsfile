@@ -48,15 +48,12 @@ pipeline {
                 }
             }
             steps {
-                sh "cd ../"
                 sh "git clone https://github.com/DaniloToroL/module_documentator.git"
-                sh "cd module_documentator"
                 sh "sudo apt install python3-pip -y"
                 sh "pwd"
                 sh "ls"
-                sh "pip3 install -r ./requirements.txt"
-                sh "python3 documentator -m ../cicdTest"
-                sh "cd ../cicdTest"
+                sh "pip3 install -r ./module_documentator/requirements.txt"
+                sh "python3 ./module_documentator/documentator -m ./"
             }
         }
 
