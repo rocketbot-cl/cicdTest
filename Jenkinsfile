@@ -53,7 +53,7 @@ pipeline {
                 sh "pwd"
                 sh "ls"
                 sh "pip3 install -r ./module_documentator/requirements.txt"
-                sh "pip3 install tk"
+                sh "sudo apt install python3-tk -y"
                 sh "python3 ./module_documentator/documentator.py -m ./"
             }
         }
