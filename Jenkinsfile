@@ -63,7 +63,8 @@ pipeline {
                 expression {
                     env.BRANCH_NAME.contains("PR")
                 }
-            } steps {
+            }
+            steps {
                 script {
                     if (!fileExists("./README.md")) {
                         error("README file not found")
