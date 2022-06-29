@@ -63,13 +63,14 @@ pipeline {
                 expression {
                     env.BRANCH_NAME.contains("PR")
                 }
-            }
-            script {
-                if (!fileExists("./README.md")) {
-                    error("README file not found")
-                }
-                if (!fileExists("${manualPath}")) {
-                    error("Manual file not found")
+            } steps {
+                script {
+                    if (!fileExists("./README.md")) {
+                        error("README file not found")
+                    }
+                    if (!fileExists("${manualPath}")) {
+                        error("Manual file not found")
+                    }
                 }
             }
         }
