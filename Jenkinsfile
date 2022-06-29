@@ -53,6 +53,7 @@ pipeline {
                 sh "pwd"
                 sh "ls"
                 sh "pip3 install -r ./module_documentator/requirements.txt"
+                sh "pip3 install tk"
                 sh "python3 ./module_documentator/documentator.py -m ./"
             }
         }
@@ -95,7 +96,7 @@ pipeline {
         failure {
             echo "Test failed"
             sh "rm -r ./*"
-            
+
         }
     }
 }
