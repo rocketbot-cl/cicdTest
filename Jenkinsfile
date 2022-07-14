@@ -52,6 +52,9 @@ pipeline {
                 sh "sudo apt install python3-pip -y"
                 sh "pwd"
                 sh "ls"
+                sh "cd module_documentator"
+                sh "git checkout qa"
+                sh "cd ../"
                 sh "pip3 install -r ./module_documentator/requirements.txt"
                 sh "sudo apt install python3-tk -y"
                 sh "python3 ./module_documentator/documentator.py -m ./"
@@ -84,6 +87,22 @@ pipeline {
             }
             steps {
                 echo "Test running from pull request 2"
+            }
+        }
+
+        stage("commit") {
+            when {
+                expression {
+                    env.BRANCH_NAME.contains("PR")
+                }
+            }
+            steps {
+                script {
+                    sh "cd module_documentator"
+                    sh "git add ."
+                    sh "git commit -m '${env.CHANGE_TITLE}'"
+                    sh "git push origin qa"
+                }
             }
         }
     }
