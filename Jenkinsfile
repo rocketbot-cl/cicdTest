@@ -97,17 +97,14 @@ pipeline {
                 }
             }
             steps {
-                steps {
-                    script {
-                        sh "pwd"
-                        sh "ls"
-                        sh "git checkout qa"
-                        sh "git merge ${envPrName}"
-                        sh "git add ."
-                        sh "git commit -m '${env.CHANGE_TITLE}'"
-                        sh "git push origin qa"
-                    }
-
+                script {
+                    sh "pwd"
+                    sh "ls"
+                    sh "git checkout qa"
+                    sh "git merge ${envPrName}"
+                    sh "git add ."
+                    sh "git commit -m '${env.CHANGE_TITLE}'"
+                    sh "git push origin qa"
                 }
             }
         }
