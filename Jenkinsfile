@@ -100,6 +100,7 @@ pipeline {
                 script {
 
                     sh "cd module_documentator"
+                    sh "pwd"
                     sh "git add ."
                     sh "git commit -m '${env.CHANGE_TITLE}'"
                     sh "git push origin qa"
