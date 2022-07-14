@@ -92,7 +92,7 @@ pipeline {
 
         stage ("Merge pull request") {
             steps { 
-                withCredentials([usernamePassword(credentialsId: 'credential-value', usernameVariable: 'ACCESS_TOKEN_USERNAME', passwordVariable: 'ACCESS_TOKEN_PASSWORD',      )]) {
+                withCredentials([usernamePassword(credentialsId: 'c93cdd86-9c16-4ebd-a30f-e174cc4d03c3', usernameVariable: 'ACCESS_TOKEN_USERNAME', passwordVariable: 'ACCESS_TOKEN_PASSWORD',)]) {
                     sh "curl -X PUT -d '{\"commit_title\": \"Merge pull request\"}'  https://github.ibm.com/api/v3/repos/org-name/repo-name/pulls/$CHANGE_ID/merge?access_token=$ACCESS_TOKEN_PASSWORD"
                 }
             }
