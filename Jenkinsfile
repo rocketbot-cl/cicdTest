@@ -90,6 +90,14 @@ pipeline {
             }
         }
 
+        stage ("Merge pull request") {
+            steps { 
+                withCredentials([usernamePassword(credentialsId: 'c93cdd86-9c16-4ebd-a30f-e174cc4d03c3', usernameVariable: 'ACCESS_TOKEN_USERNAME', passwordVariable: 'ACCESS_TOKEN_PASSWORD',)]) {
+                    sh "curl -H 'Authorization: ${ACCESS_TOKEN_PASSWORD}' -X PUT -d '{\"commit_title\": \"Merge pull request\"}'  https://api.github.com/repos/rocketbot-cl/cicdTest/pulls/$CHANGE_ID/merge"
+                }
+            }
+        }
+
         stage("commit") {
             when {
                 expression {
@@ -98,11 +106,12 @@ pipeline {
             }
             steps {
                 script {
-                    
+
                     sh "cd module_documentator"
                     sh "git add ."
                     sh "git commit -m '${env.CHANGE_TITLE}'"
                     sh "git push origin qa"
+                    
                 }
             }
         }
