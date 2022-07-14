@@ -1,5 +1,6 @@
 
 def manualPath = "./example/Manual_cicdTest.pdf"
+def envPrName = env.BRANCH_NAME
 
 pipeline {
 
@@ -52,12 +53,11 @@ pipeline {
                 sh "sudo apt install python3-pip -y"
                 sh "pwd"
                 sh "ls"
-                sh "cd module_documentator"
-                sh "git checkout qa"
-                sh "cd ../"
                 sh "pip3 install -r ./module_documentator/requirements.txt"
                 sh "sudo apt install python3-tk -y"
                 sh "python3 ./module_documentator/documentator.py -m ./"
+                sh "rm -r module_documentator"
+                
             }
         }
 
@@ -98,13 +98,13 @@ pipeline {
             }
             steps {
                 script {
-
-                    sh "cd module_documentator"
                     sh "pwd"
+                    sh "ls"
+                    sh "git checkout qa"
+                    sh "git merge origin/${envPrName}"
                     sh "git add ."
                     sh "git commit -m '${env.CHANGE_TITLE}'"
                     sh "git push origin qa"
-                    
                 }
             }
         }
