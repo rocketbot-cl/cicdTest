@@ -98,6 +98,7 @@ pipeline {
             }
             steps {
                 script {
+                    
                     sh "cd module_documentator"
                     sh "git add ."
                     sh "git commit -m '${env.CHANGE_TITLE}'"
