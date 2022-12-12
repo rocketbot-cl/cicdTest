@@ -1,3 +1,3 @@
 ## cicdTest
 
- view the documentation at: https://github.com/rocketbot-cl/SAPB1/blob/master/example/Manual_cicdTest.pdf
+ view the documentation at: https://github.com/rocketbot-cl/cicdTest/blob/master/example/Manual_cicdTest.pdf
